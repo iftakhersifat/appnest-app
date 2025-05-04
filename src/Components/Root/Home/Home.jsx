@@ -1,8 +1,11 @@
 import React from 'react';
+import Categories from './Categories';
 
 const Home = () => {
     return (
-        <div className='container mx-auto mt-4 bg-[#1565C0] rounded-xl mb-10'>
+        // banner section
+        <div className='container mx-auto mt-4 mb-10'>
+            <div className='bg-[#1565C0] rounded-xl'>
             <div className='flex justify-between items-center px-8'>
                 {/* text area */}
             <div className='space-y-4 w-[50%]'>
@@ -33,6 +36,9 @@ const Home = () => {
                 <img src="/assets/banner.png" alt="" />
             </div>
             </div>
+            </div>
+
+            <Categories></Categories>
         </div>
     );
 };
