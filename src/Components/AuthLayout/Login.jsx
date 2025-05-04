@@ -1,13 +1,19 @@
 import React from 'react';
 
 const Login = () => {
+    const handelForm=(e)=>{
+        e.preventDefault();
+        const email =e.target.email.value;
+        const password =e.target.password.value;
+        console.log(email, password);
+    }
     return (
-        <div className="hero">
+        <div className="hero mb-10">
   <div className="hero-content flex-col">
     <div className="card w-[500px] shadow-2xl">
       <div className="card-body">
 
-        <form className="fieldset">
+        <form onSubmit={handelForm} className="fieldset">
           <label className="label">Email</label>
           <input type="email" className="input w-full" placeholder="Email" name='email' />
           <label className="label">Password</label>
