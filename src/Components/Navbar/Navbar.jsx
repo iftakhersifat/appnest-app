@@ -12,7 +12,8 @@ const Navbar = () => {
                 <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
                 <NavLink to="/profile">My Profile</NavLink>
             </div>
-            <div>
+            <div className='flex gap-4'>
+                <img src="/assets/user.png" alt="" />
                 <button className='btn bg-gradient-to-b from-blue-400 to-blue-700 text-white px-6 rounded-lg text-[16px]'>Login</button>
             </div>
         </div>
