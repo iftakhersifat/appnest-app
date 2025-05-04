@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className='container mx-auto mt-4 bg-[#1565C0] rounded-xl'>
+        <div className='container mx-auto mt-4 bg-[#1565C0] rounded-xl mb-10'>
             <div className='flex justify-between items-center px-8'>
                 {/* text area */}
             <div className='space-y-4 w-[50%]'>
