@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Login = () => {
-    const handelForm=(e)=>{
+    const handelLogin=(e)=>{
         e.preventDefault();
         const email =e.target.email.value;
         const password =e.target.password.value;
@@ -9,17 +10,18 @@ const Login = () => {
     }
     return (
         <div className="hero mb-10">
-  <div className="hero-content flex-col">
+    <div className="hero-content flex-col">
     <div className="card w-[500px] shadow-2xl">
       <div className="card-body">
 
-        <form onSubmit={handelForm} className="fieldset">
+        <form onSubmit={handelLogin} className="fieldset">
           <label className="label">Email</label>
           <input type="email" className="input w-full" placeholder="Email" name='email' />
           <label className="label">Password</label>
           <input type="password" className="input w-full" placeholder="Password" name='password' />
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4">Login</button>
+          <p className='text-center mt-4'>Don’t Have An Account ? <Link to="/auth/register"><span className='text-red-500 underline'>Register</span></Link></p>
         </form>
 
       </div>
