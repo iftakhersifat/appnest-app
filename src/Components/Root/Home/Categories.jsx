@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 
 const Categories = () => {
   const [apps, setApps] = useState([]);
@@ -21,9 +22,7 @@ const Categories = () => {
 
 //   show download
 const formatDownloads = (num) => {
-    return num >= 1_000_000
-      ? (num / 1_000_000).toFixed(1) + 'M+'
-      : (num / 1_000).toFixed(1) + 'K+';
+    return num >= 1_000_000 ? (num / 1_000_000).toFixed(1) + 'M+' : (num / 1_000).toFixed(1) + 'K+';
   };
 
   const renderApps = (apps) => (
@@ -33,7 +32,7 @@ const formatDownloads = (num) => {
           <img src={app.thumbnail} alt={app.name} className="w-full h-32 object-cover rounded" />
           <div className='flex justify-between items-center'>
           <h3 className="text-lg font-bold mt-2">{app.name}</h3>
-          <p className="text-sm mt-2 text-gray-600">⭐ {app.rating}</p>
+          <p className="text-sm mt-2 text-gray-600 flex gap-2"><FaStar className="text-yellow-400" size={18}></FaStar> {app.rating}</p>
           </div>
           <p> {formatDownloads(app.downloads)}</p>
         </div>
