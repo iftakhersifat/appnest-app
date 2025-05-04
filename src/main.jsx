@@ -9,6 +9,7 @@ import {
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Root/Home/Home.jsx';
 import Apps from './Components/Apps/Apps.jsx';
+import NotFound from './Components/NotFound/NotFound.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
        Component: Home},
       {path: "apps", Component:Apps},
     ]
+  },
+
+  {
+    path: "*",
+    Component: NotFound
   },
 ]);
 
