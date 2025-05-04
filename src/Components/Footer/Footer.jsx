@@ -3,23 +3,37 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-gradient-to-b from-blue-400 to-blue-700 text-primary-content p-10">
-    <aside>
+        <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 bg-gradient-to-b from-blue-400 to-blue-700">
+ <div className='container mx-auto flex justify-between'>
+ <aside>
     <div>
-        <img className='w-60' src="/assets/logo2.png" alt="" />
+        <img className='w-40 -ml-4 -mt-12' src="/assets/logo2.png" alt="" />
     </div>
-    <p className="font-bold -mt-38">
+    <p className="font-bold -mt-12">
     All the right apps. All in one Nest.
     </p>
-    <div className='space-x-6 -mt-24'>
+    <div className='space-x-6 mt-1'>
      <NavLink to="/apps" className={({ isActive }) => isActive ? "text-green-500 underline" : " "}>Apps</NavLink>
     <NavLink to="/profile" className={({ isActive }) => isActive ? "text-green-500 underline" : " "}>My Profile</NavLink>
     </div>
 
-    <p className='-mt-12'>Copyright © {new Date().getFullYear()} - All right reserved</p>
+    <p className='mt-1'>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
+  
+
+{/* legal section */}
+  <div>
+  <h6 className="footer-title">Legal</h6>
+  <div className='flex flex-col gap-2'>
+  <NavLink to="/terms" className="text-white">Terms of Service</NavLink>
+    <NavLink to="/privacy" className="text-white">Privacy Policy</NavLink>
+    <NavLink to="/resources" className="text-white">Developer Resources</NavLink>
+    </div>
+  </div>
+
   <nav>
-    <div className="grid grid-flow-col gap-4 -mt-12">
+    <h6 className="footer-title">Social</h6>
+    <div className="grid grid-flow-col gap-4">
       <a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +69,7 @@ const Footer = () => {
       </a>
     </div>
   </nav>
+ </div>
 </footer>
     );
 };
