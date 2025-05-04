@@ -13,7 +13,7 @@ const Navbar = () => {
                 <NavLink to="/profile">My Profile</NavLink>
             </div>
             <div>
-                <button className='btn bg-gradient-to-b from-blue-400 to-blue-700 text-white px-6 rounded-lg'>Login</button>
+                <button className='btn bg-gradient-to-b from-blue-400 to-blue-700 text-white px-6 rounded-lg text-[16px]'>Login</button>
             </div>
         </div>
         </div>
