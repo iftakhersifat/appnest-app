@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { MdOutlineFileDownload } from 'react-icons/md';
 
 const Categories = () => {
   const [apps, setApps] = useState([]);
@@ -34,7 +35,7 @@ const formatDownloads = (num) => {
           <h3 className="text-lg font-bold mt-2">{app.name}</h3>
           <p className="text-sm mt-2 text-gray-600 flex gap-2"><FaStar className="text-yellow-400" size={18}></FaStar> {app.rating}</p>
           </div>
-          <p> {formatDownloads(app.downloads)}</p>
+          <p className='flex gap-2'><MdOutlineFileDownload size={24} /> {formatDownloads(app.downloads)}</p>
         </div>
       ))}
     </div>
