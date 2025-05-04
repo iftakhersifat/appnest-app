@@ -8,12 +8,14 @@ import {
 } from "react-router";
 import Root from './Components/Root/Root.jsx';
 import Home from './Components/Root/Home/Home.jsx';
+import Apps from './Components/Apps/Apps.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children:[
-      {index: true, Component: Home}
+      {index: true, Component: Home},
+      {path: "apps", Component:Apps},
     ]
   },
 ]);

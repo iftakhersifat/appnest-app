@@ -9,7 +9,7 @@ const Navbar = () => {
                 <img className='w-38' src="/assets/logo.png" alt="" />
             </div>
             <div className='space-x-6'>
-                <NavLink to="/apps">Apps</NavLink>
+                <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
                 <NavLink to="/profile">My Profile</NavLink>
             </div>
             <div>
