@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='container mx-auto mt-4'>
             <div className='flex justify-between items-center'>
             <div>
-                <img className='w-38' src="/assets/logo.png" alt="" />
+                <img className='w-42 -ml-4' src="/assets/logo.png" alt="" />
             </div>
             <div className='space-x-6'>
                 <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
