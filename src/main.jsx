@@ -10,6 +10,9 @@ import Root from './Components/Root/Root.jsx';
 import Home from './Components/Root/Home/Home.jsx';
 import Apps from './Components/Apps/Apps.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
+import AuthLayout from './Components/AuthLayout/AuthLayout.jsx';
+import Login from './Components/AuthLayout/Login.jsx';
+import Register from './Components/AuthLayout/Register.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +21,23 @@ const router = createBrowserRouter([
       {index: true,
        Component: Home},
       {path: "apps", Component:Apps},
+
+      // auth layout
+      {
+        path: "auth",
+        Component: AuthLayout,
+        children:[
+          {
+            path: "/auth/login",
+            Component: Login,
+          },
+          {
+            path: "/auth/register",
+            Component:Register
+          },
+        ]
+      },
+      
     ]
   },
 
