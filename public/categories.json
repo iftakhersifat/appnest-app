@@ -1,0 +1,187 @@
+[
+    {
+      "id": "app001",
+      "name": "Programming Hero",
+      "developer": "Programming Hero Ltd.",
+      "thumbnail": "https://i.ibb.co/sWbb4Z5/programming-hero-thumb.jpg",
+      "banner": "https://i.ibb.co/vj5rT68/programming-hero-banner.jpg",
+      "downloads": 3500000,
+      "category": "Education",
+      "rating": 4.8,
+      "description": "Programming Hero is a fun and interactive way to learn programming. Whether you're a beginner or looking to brush up your skills, this app makes learning to code exciting and practical.",
+      "features": [
+        "Interactive coding lessons",
+        "Real-world projects",
+        "Gamified learning experience"
+      ],
+      "reviews": [
+        {
+          "user": "coder_nadia",
+          "rating": 5,
+          "comment": "Best app for beginners! The lessons are super easy to follow and engaging."
+        }
+      ]
+    },
+    {
+      "id": "app002",
+      "name": "FitLife",
+      "developer": "Wellness Tech",
+      "thumbnail": "https://i.ibb.co/h9j1zrh/fitlife-thumb.jpg",
+      "banner": "https://i.ibb.co/xHFhQ06/fitlife-banner.jpg",
+      "downloads": 2800000,
+      "category": "Healthcare",
+      "rating": 4.7,
+      "description": "FitLife helps you stay in shape with personalized workout plans, diet tracking, and real-time health insights.",
+      "features": [
+        "Custom fitness plans",
+        "Diet and water reminders",
+        "Health progress tracking"
+      ],
+      "reviews": [
+        {
+          "user": "fit_mike",
+          "rating": 5,
+          "comment": "Great for staying healthy at home. The plans are easy to follow!"
+        }
+      ]
+    },
+    {
+      "id": "app003",
+      "name": "StudyPal",
+      "developer": "EduPro Inc.",
+      "thumbnail": "https://i.ibb.co/Vm9yNP7/studypal-thumb.jpg",
+      "banner": "https://i.ibb.co/yRWn06j/studypal-banner.jpg",
+      "downloads": 1500000,
+      "category": "Education",
+      "rating": 4.6,
+      "description": "StudyPal helps students stay on track with flashcards, notes, and collaborative study rooms.",
+      "features": [
+        "Smart flashcards",
+        "Group study rooms",
+        "Note organizer"
+      ],
+      "reviews": [
+        {
+          "user": "uni_student88",
+          "rating": 4.5,
+          "comment": "A must-have for students. Love the flashcard system!"
+        }
+      ]
+    },
+    {
+      "id": "app004",
+      "name": "ZenTask",
+      "developer": "FocusApps Ltd.",
+      "thumbnail": "https://i.ibb.co/QNnH9j0/zentask-thumb.jpg",
+      "banner": "https://i.ibb.co/Bwn5nsz/zentask-banner.jpg",
+      "downloads": 950000,
+      "category": "Productivity",
+      "rating": 4.5,
+      "description": "ZenTask keeps your tasks organized with priority levels, reminders, and a calm-focused interface.",
+      "features": [
+        "Color-coded priorities",
+        "Sync across devices",
+        "Daily productivity score"
+      ],
+      "reviews": [
+        {
+          "user": "jess_planner",
+          "rating": 4.7,
+          "comment": "Minimal design, maximum clarity. I use it every day!"
+        }
+      ]
+    },
+    {
+      "id": "app005",
+      "name": "MediTrack",
+      "developer": "HealthGuard",
+      "thumbnail": "https://i.ibb.co/F3tbRj7/meditrack-thumb.jpg",
+      "banner": "https://i.ibb.co/dJbshcK/meditrack-banner.jpg",
+      "downloads": 800000,
+      "category": "Healthcare",
+      "rating": 4.3,
+      "description": "Track your medications, doctor appointments, and medical records all in one place.",
+      "features": [
+        "Pill reminders",
+        "Appointment scheduling",
+        "Health history logs"
+      ],
+      "reviews": [
+        {
+          "user": "grandma_care",
+          "rating": 4.3,
+          "comment": "Very helpful for managing my mom's prescriptions."
+        }
+      ]
+    },
+    {
+      "id": "app006",
+      "name": "CodeCraft",
+      "developer": "DevForge",
+      "thumbnail": "https://i.ibb.co/gdxvzGm/codecraft-thumb.jpg",
+      "banner": "https://i.ibb.co/k8PLFZH/codecraft-banner.jpg",
+      "downloads": 2200000,
+      "category": "Education",
+      "rating": 4.9,
+      "description": "Master coding through hands-on challenges, live editor, and developer community support.",
+      "features": [
+        "Real-time coding challenges",
+        "In-browser compiler",
+        "Live mentorship sessions"
+      ],
+      "reviews": [
+        {
+          "user": "dev_julia",
+          "rating": 5,
+          "comment": "Best way to practice coding skills on the go!"
+        }
+      ]
+    },
+    {
+      "id": "app007",
+      "name": "Galaxy Clash",
+      "developer": "Nebula Games",
+      "thumbnail": "https://i.ibb.co/XJZ84sY/galaxy-thumb.jpg",
+      "banner": "https://i.ibb.co/fXvKv5r/galaxy-banner.jpg",
+      "downloads": 4000000,
+      "category": "Gaming",
+      "rating": 4.4,
+      "description": "An epic space battle game with strategy-based combat, alliances, and planetary domination.",
+      "features": [
+        "Online multiplayer wars",
+        "Fleet customization",
+        "Daily space missions"
+      ],
+      "reviews": [
+        {
+          "user": "astro_gamer",
+          "rating": 4.5,
+          "comment": "Addicting gameplay! Feels like I'm in a real galactic war."
+        }
+      ]
+    },
+    {
+      "id": "app008",
+      "name": "MindEase",
+      "developer": "CalmTech",
+      "thumbnail": "https://i.ibb.co/D56vvY0/mindease-thumb.jpg",
+      "banner": "https://i.ibb.co/kxLJrp0/mindease-banner.jpg",
+      "downloads": 1300000,
+      "category": "Healthcare",
+      "rating": 4.8,
+      "description": "MindEase provides guided meditations, mood tracking, and breathing exercises to reduce stress and anxiety.",
+      "features": [
+        "Daily mental wellness check-ins",
+        "Guided relaxation sessions",
+        "Sleep sound playlists"
+      ],
+      "reviews": [
+        {
+          "user": "calm_karen",
+          "rating": 5,
+          "comment": "Helped me sleep better and reduce my daily stress!"
+        }
+      ]
+    }
+  ]
+  
