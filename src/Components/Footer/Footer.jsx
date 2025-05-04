@@ -7,9 +7,9 @@ const Footer = () => {
  <div className='container mx-auto flex justify-between'>
  <aside>
     <div>
-        <img className='w-40 -ml-4 -mt-12' src="/assets/logo2.png" alt="" />
+        <img className='w-40 -ml-4' src="/assets/logo2.png" alt="" />
     </div>
-    <p className="font-bold -mt-12">
+    <p className="font-bold">
     All the right apps. All in one Nest.
     </p>
     <div className='space-x-6 mt-1'>
