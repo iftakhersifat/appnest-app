@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 const Register = () => {
 
@@ -38,27 +39,28 @@ const Register = () => {
           UpdateUser({displayName: name, photoURL: photo})
           .then(()=>{
             setUser({...user, displayName: name, photoURL: photo});
+            toast.success("Account created successfully!");
           })
-          .catch((error) => {
-            setError(error);
+          .catch(() => {
+            toast.error("Profile update failed.");
             setUser(user);
           });
           navigate("/");
            
         })
         .catch(error=>{
-            setError(error.message);
+          toast.error(error.message);
         })
     }
 
     const handelGoogle =()=>{
       googleProvider(provider)
-      .then((result)=>{
-        console.log(result);
+      .then(()=>{
+        toast.success("Logged in with Google!");
         navigate("/");
       })
       .catch(error=>{
-        setError(error.message);
+        toast.error(error.message);
     })
     }  
     return (

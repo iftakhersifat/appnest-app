@@ -8,7 +8,6 @@ const AuthProvider = ({children}) => {
     console.log(user)
 
     // for google login
-    
 
     const googleProvider = (provider)=>{
         return signInWithPopup(auth, provider);

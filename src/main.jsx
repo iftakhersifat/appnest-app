@@ -14,6 +14,7 @@ import AuthLayout from './Components/AuthLayout/AuthLayout.jsx';
 import Login from './Components/AuthLayout/Login.jsx';
 import Register from './Components/AuthLayout/Register.jsx';
 import AuthProvider from './Components/Firebase/AuthProvider.jsx';
+import { Toaster } from 'react-hot-toast';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
+      <Toaster position="top-right" reverseOrder={false}></Toaster>
     <RouterProvider router={router} />
     </AuthProvider>
   </StrictMode>,

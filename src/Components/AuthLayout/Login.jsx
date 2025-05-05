@@ -1,6 +1,7 @@
 import React, { use } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Login = () => {
   const {signIn} =use(AUthContext);
@@ -15,12 +16,12 @@ const Login = () => {
 
         // signIn
         signIn(email, password)
-        .then(result=>{
-          console.log(result)
+        .then(()=>{
+          toast.success("Account created successfully!")
           navigate("/")
         })
         .catch(error=>{
-          console.log(error)
+          toast.error(error.message)
         })
     }
     return (
