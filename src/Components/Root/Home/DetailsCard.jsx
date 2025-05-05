@@ -5,8 +5,14 @@ import { useParams } from 'react-router';
 
 const DetailsCard = () => {
     const { id } = useParams();
-
     const [app, setApp] = useState(null);
+
+    // initial reviews view
+    const [reviews, setReviews] = useState([]);
+
+    const [review, setReview] = useState("");
+  const [rating, setRating] = useState(1);
+    
 
     useEffect(() => {
         fetch('/categories.json')
@@ -14,8 +20,26 @@ const DetailsCard = () => {
             .then(data => {
                 const found = data.find(item => item.id == id); 
                 setApp(found);
+                setReviews(found.reviews || []); 
             });
     }, [id]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        if (review.trim()) {
+          const newReview = {
+            user: "Anonymous",
+            rating,
+            comment: review,
+          };
+    
+          setReviews([newReview, ...reviews]); // Add new review to the top
+          setReview(""); // Reset form
+          setRating(1);
+        }
+      };
+    
 
     if (!app) return <div className="text-center text-lg font-semibold">Loading...</div>;
 
@@ -64,9 +88,9 @@ const DetailsCard = () => {
 
             <div className="mb-8">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Reviews</h3>
-                <div className="space-y-6 border-1 border-amber-300">
-                    {app.reviews && app.reviews.map((review, index) => (
-                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm">
+                <div className="space-y-6">
+                    {reviews.map((review, index) => (
+                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm border-1 border-amber-300">
                             <p className="font-medium text-gray-800">{review.user}</p>
                             <p className="text-sm text-yellow-500 flex gap-2 items-center">{review.rating} <FaStar className="text-amber-400" size={12}></FaStar></p>
                             <p className="text-gray-700">{review.comment}</p>
@@ -75,8 +99,36 @@ const DetailsCard = () => {
                 </div>
             </div>
 
+            {/* Review Submission Section */}
+            <div className="mb-8">
+      <h3 className="text-xl font-semibold text-gray-900 mb-3">Submit Your Review</h3>
+      <form onSubmit={handleSubmit}>
+        <textarea
+          className="w-full p-4 mb-4 border rounded-lg shadow-sm"
+          placeholder="Write your review..."
+          value={review}
+          onChange={(e) => setReview(e.target.value)}
+        />
+        <div className="flex items-center gap-4">
+          <input
+            type="number"
+            min="1"
+            max="5"
+            className="w-20 p-2 border rounded-lg"
+            value={rating}
+            onChange={(e) => setRating(Number(e.target.value))}
+          />
+          <button
+            type="submit"
+            className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Submit Review
+          </button>
+        </div>
+      </form>
+    </div>
             <div className="flex justify-center">
-                <button className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Install
                 </button>
             </div>
