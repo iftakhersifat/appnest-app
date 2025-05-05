@@ -1,17 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { MdOutlineFileDownload } from 'react-icons/md';
 import { useParams } from 'react-router';
+import { AUthContext } from '../../Firebase/AuthProvider';
 
 const DetailsCard = () => {
+    const {user} =use(AUthContext)
+
     const { id } = useParams();
     const [app, setApp] = useState(null);
 
     // initial reviews view
     const [reviews, setReviews] = useState([]);
 
+    // new reviews setup
     const [review, setReview] = useState("");
-  const [rating, setRating] = useState(1);
+   const [rating, setRating] = useState(1);
     
 
     useEffect(() => {
@@ -29,7 +33,7 @@ const DetailsCard = () => {
     
         if (review.trim()) {
           const newReview = {
-            user: "Anonymous",
+            user: user ? user.displayName : "Anonymous",
             rating,
             comment: review,
           };
@@ -120,8 +124,7 @@ const DetailsCard = () => {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
+            className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
             Submit Review
           </button>
         </div>
