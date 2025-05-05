@@ -4,7 +4,7 @@ import { AUthContext } from '../Firebase/AuthProvider';
 
 const Register = () => {
 
-  const {createUser} =use(AUthContext);
+  const {createUser, UpdateUser, setUser} =use(AUthContext);
 
   const navigate =useNavigate();
 
@@ -19,12 +19,22 @@ const Register = () => {
         // createUser
         createUser(email, password)
         .then(result=>{
-          console.log(result)
-          navigate("/")
+          const user = result.user;
+          UpdateUser({displayName: name, photoURL: photo})
+          .then(()=>{
+            setUser({...user, displayName: name, photoURL: photo});
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
+          navigate("/");
+           
         })
         .catch(error=>{
-          console.log(error)
+            console.log(error.message);
         })
+
 
     }
     return (
