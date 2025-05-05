@@ -7,14 +7,19 @@ const AuthProvider = ({children}) => {
     const [user, setUser] =useState(null);
     console.log(user)
 
+    // for private jsx
+    const [isLoading, setLoading] =useState(true);
+
     // for google login
 
     const googleProvider = (provider)=>{
+        setLoading(true)
         return signInWithPopup(auth, provider);
     }
 
     // new user
     const createUser=(email, password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -22,6 +27,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser)=>{
             setUser(currentUser);
+            setLoading(false)
         });
         return ()=>{
             unsubscribe();
@@ -30,6 +36,7 @@ const AuthProvider = ({children}) => {
 
     // login
     const signIn =(email, password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -56,6 +63,9 @@ const AuthProvider = ({children}) => {
         logOut,
         UpdateUser,
         googleProvider,
+
+        isLoading,
+        setLoading,
     }
 
     return <AUthContext value={authData}>

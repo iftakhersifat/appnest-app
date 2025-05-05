@@ -3,7 +3,11 @@ import { AUthContext } from './AuthProvider';
 import { Navigate } from 'react-router';
 
 const Private = ({children}) => {
-    const {user} = use(AUthContext);
+    const {user, isLoading} = use(AUthContext);
+
+    if(isLoading){
+        return <span className="loading loading-bars loading-xl ml-50"></span>;
+    }
 
     if(user){
         return children;
