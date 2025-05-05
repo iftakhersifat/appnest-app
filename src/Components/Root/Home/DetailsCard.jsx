@@ -34,12 +34,13 @@ const DetailsCard = () => {
         if (review.trim()) {
           const newReview = {
             user: user ? user.displayName : "Anonymous",
+            photoURL: user ? user.photoURL : "/assets/user.png",
             rating,
             comment: review,
           };
     
-          setReviews([newReview, ...reviews]); // Add new review to the top
-          setReview(""); // Reset form
+          setReviews([newReview, ...reviews]); 
+          setReview(""); 
           setRating(1);
         }
       };
@@ -94,10 +95,16 @@ const DetailsCard = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Reviews</h3>
                 <div className="space-y-6">
                     {reviews.map((review, index) => (
-                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm border-1 border-amber-300">
+                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm border-1 border-amber-300 flex gap-4">
+                            <div>
+                                <img className='w-12 rounded-lg' src={review.photoURL || "/assets/user.png"} alt="" />
+                            </div>
+                            <div className='flex flex-col'>
                             <p className="font-medium text-gray-800">{review.user}</p>
                             <p className="text-sm text-yellow-500 flex gap-2 items-center">{review.rating} <FaStar className="text-amber-400" size={12}></FaStar></p>
                             <p className="text-gray-700">{review.comment}</p>
+                            </div>
+                            
                         </div>
                     ))}
                 </div>
