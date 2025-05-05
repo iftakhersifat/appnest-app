@@ -16,6 +16,10 @@ const DetailsCard = () => {
     // new reviews setup
     const [review, setReview] = useState("");
    const [rating, setRating] = useState(1);
+
+   // for apps install
+   const [isInstalled, setIsInstalled] = useState(false);
+   const [hasInstalledOnce, setHasInstalledOnce] = useState(false);
     
 
     useEffect(() => {
@@ -28,9 +32,26 @@ const DetailsCard = () => {
             });
     }, [id]);
 
+    // apps install conditions
+    const handleInstallToggle = () => {
+        if (!isInstalled) {
+          setIsInstalled(true);
+          setHasInstalledOnce(true); // Mark that the app was installed at least once
+        } else {
+          setIsInstalled(false);
+        }
+      };
+
+
+    //  review submit conditions
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+        
+        if (!hasInstalledOnce) {
+            alert("You must install the app before submitting a review.");
+            return;
+          }
+
         if (review.trim()) {
           const newReview = {
             user: user ? user.displayName : "Anonymous",
@@ -137,11 +158,23 @@ const DetailsCard = () => {
         </div>
       </form>
     </div>
-            <div className="flex justify-center">
-                <button className="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Install
-                </button>
-            </div>
+
+{/* install && uninstall */}
+    <div className="flex justify-center">
+  <button
+    onClick={handleInstallToggle}
+    className={`${
+      isInstalled ? "bg-red-600 hover:bg-red-700" : "bg-blue-600 hover:bg-blue-700"
+    } text-white py-3 px-8 rounded-lg focus:ring-2 focus:ring-opacity-50 ${
+      isInstalled ? "focus:ring-red-500" : "focus:ring-blue-500"
+    }`}
+  >
+    {isInstalled ? "Uninstall" : "Install"}
+  </button>
+</div>
+
+
+
         </div>
     );
 };
