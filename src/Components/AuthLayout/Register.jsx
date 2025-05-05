@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 
@@ -8,6 +8,12 @@ const Register = () => {
 
   const navigate =useNavigate();
 
+  // check password
+  const checkPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+  // error check
+  const [error, setError]= useState('');
+
     const handelRegister=(e)=>{
         e.preventDefault();
         const name =e.target.name.value;
@@ -15,6 +21,11 @@ const Register = () => {
         const email =e.target.email.value;
         const password =e.target.password.value;
         console.log(name, photo, email, password);
+
+        if(checkPassword.test(password) != true){
+          setError("Must have an Uppercase letter in the password. Must have a Lowercase letter in the password. Length must be at least 6 character");
+          return;
+        }
 
         // createUser
         createUser(email, password)
@@ -25,14 +36,14 @@ const Register = () => {
             setUser({...user, displayName: name, photoURL: photo});
           })
           .catch((error) => {
-            console.log(error);
+            setError(error);
             setUser(user);
           });
           navigate("/");
            
         })
         .catch(error=>{
-            console.log(error.message);
+            setError(error.message);
         })
 
 
@@ -56,9 +67,15 @@ const Register = () => {
           <label className="label">Password</label>
           <input type="password" className="input w-full" placeholder="Enter Correct Password" name='password' />
 
+          {
+            error && <p className='text-red-500'>{error}</p>
+          }
+
           <button className="btn btn-neutral mt-4">Login</button>
           <p className='text-center mt-4'>Do you have an account ? <Link to="/auth/login"><span className='text-red-500 underline'>Login</span></Link></p>
         </form>
+
+        
 
       </div>
     </div>
