@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { MdOutlineFileDownload } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const Categories = () => {
   const [apps, setApps] = useState([]);
@@ -29,14 +30,14 @@ const formatDownloads = (num) => {
   const renderApps = (apps) => (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       {apps.map(app => (
-        <div key={app.id} className="border-blue-200 border-1 p-4 rounded shadow">
+        <Link to={`/details/${app.id}`} key={app.id} className="border-blue-200 border-1 p-4 rounded shadow">
           <img src={app.thumbnail} alt={app.name} className="w-full h-32 border-1 border-amber-200 object-cover rounded" />
           <div className='flex justify-between items-center'>
           <h3 className="text-lg font-bold mt-2">{app.name}</h3>
           <p className="text-sm mt-2 text-gray-600 flex gap-2"><FaStar className="text-yellow-400" size={18}></FaStar> {app.rating}</p>
           </div>
           <p className='flex gap-2'><MdOutlineFileDownload size={24} /> {formatDownloads(app.downloads)}</p>
-        </div>
+        </Link>
       ))}
     </div>
   );

@@ -15,6 +15,7 @@ import Login from './Components/AuthLayout/Login.jsx';
 import Register from './Components/AuthLayout/Register.jsx';
 import AuthProvider from './Components/Firebase/AuthProvider.jsx';
 import { Toaster } from 'react-hot-toast';
+import DetailsCard from './Components/Root/Home/DetailsCard.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
       {index: true,
        Component: Home},
       {path: "apps", Component:Apps},
+
+      // details card
+      {
+        path: "/details/:id",
+        Component: DetailsCard,
+      },
 
       // auth layout
       {
