@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
 const NotFound = () => {
+    useEffect(() => {
+        document.title = "Not Found | AppNest";
+      }, []);
+
     const navigate = useNavigate();
     const handelButton =()=>{
         navigate("/")

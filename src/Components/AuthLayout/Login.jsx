@@ -1,9 +1,13 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Login = () => {
+  useEffect(() => {
+      document.title = "Login | AppNest";
+    }, []);
+
   const {signIn} =use(AUthContext);
 
   const navigate =useNavigate();

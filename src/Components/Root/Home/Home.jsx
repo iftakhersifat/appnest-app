@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Categories from './Categories';
 import { BsLightningChargeFill } from 'react-icons/bs';
 import { HiMiniUsers } from 'react-icons/hi2';
 import { TbTargetArrow } from 'react-icons/tb';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home | AppNest";
+  }, []);
     return (
+
+
         // banner section
         <div className='container mx-auto mt-4 mb-10'>
             <div className='bg-[#1565C0] rounded-xl'>

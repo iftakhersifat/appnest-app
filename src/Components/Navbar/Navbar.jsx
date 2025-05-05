@@ -24,6 +24,7 @@ const Navbar = () => {
                 <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Home</NavLink>
                 <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
                 <NavLink to="/profile" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>My Profile</NavLink>
+                <NavLink to="/about" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>About Us</NavLink>
             </div>
             <div className='flex gap-4'>
                 <img className='w-12 rounded-xl -mt-1' src={user ? user.photoURL : "/assets/user.png"} alt="photoURL" />

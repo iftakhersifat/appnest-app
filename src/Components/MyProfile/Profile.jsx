@@ -1,8 +1,12 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { AUthContext } from '../Firebase/AuthProvider';
 import NotFound from '../NotFound/NotFound';
 
 const Profile = () => {
+    useEffect(() => {
+        document.title = "Profile | AppNest";
+      }, []);
+
     const {user} =use(AUthContext);
     return (
         <div className='container mx-auto mb-28'>

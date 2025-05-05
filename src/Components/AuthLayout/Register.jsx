@@ -1,10 +1,13 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 
 const Register = () => {
+  useEffect(() => {
+      document.title = "Register | AppNest";
+    }, []);
 
   const {createUser, UpdateUser, setUser, googleProvider} =use(AUthContext);
 

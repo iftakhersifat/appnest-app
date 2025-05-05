@@ -18,6 +18,8 @@ import { Toaster } from 'react-hot-toast';
 import DetailsCard from './Components/Root/Home/DetailsCard.jsx';
 import Profile from './Components/MyProfile/Profile.jsx';
 import Private from './Components/Firebase/Private.jsx';
+import About from './Components/Root/Home/About.jsx';
+// import About from './About'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
       {index: true,
        Component: Home},
       {path: "apps", Component:Apps},
+      {path: "about", Component: About},
 
       // profile
       {path: "profile", Component: Profile},
