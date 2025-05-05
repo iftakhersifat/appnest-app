@@ -31,7 +31,11 @@ const router = createBrowserRouter([
       {path: "about", Component: About},
 
       // profile
-      {path: "profile", Component: Profile},
+      {path: "profile", 
+       element: <Private>
+        <Profile></Profile>
+       </Private>
+      },
 
       // details card
       {
