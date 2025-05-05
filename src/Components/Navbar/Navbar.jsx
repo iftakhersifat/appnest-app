@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AUthContext } from '../Firebase/AuthProvider';
 
 const Navbar = () => {
+    const {user, logOut} =use(AUthContext);
+    const handelLogout=()=>{
+        logOut()
+        .then(()=>{
+            alert("LogOut Successfully")
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
     return (
         <div className='container mx-auto mt-4'>
             <div className='flex justify-between items-center'>
@@ -15,7 +26,9 @@ const Navbar = () => {
             </div>
             <div className='flex gap-4'>
                 <img src="/assets/user.png" alt="" />
-                <Link to="/auth/login" className='btn bg-gradient-to-b from-blue-400 to-blue-700 text-white px-6 rounded-lg text-[16px]'>Login</Link>
+                {
+                    user ? <button onClick={handelLogout} className='btn bg-gradient-to-b from-red-400 to-red-700 text-white px-6 rounded-lg text-[16px]'>Log Out</button> : <Link to="/auth/login" className='btn bg-gradient-to-b from-blue-400 to-blue-700 text-white px-6 rounded-lg text-[16px]'>Login</Link>
+                }
             </div>
         </div>
         </div>
