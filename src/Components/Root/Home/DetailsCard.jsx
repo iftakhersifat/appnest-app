@@ -116,16 +116,22 @@ const DetailsCard = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Reviews</h3>
                 <div className="space-y-6">
                     {reviews.map((review, index) => (
-                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm border-1 border-amber-300 flex gap-4">
-                            <div>
-                                <img className='w-12 rounded-lg' src={review.photoURL || "/assets/user.png"} alt="" />
+                        <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-sm border-1 border-amber-300">
+
+                            <div className='flex justify-between'>
+                            {/* image and name */}
+                            <div className='flex items-center gap-4'>
+                                <img className='w-10 rounded-lg' src={review.photoURL || "/assets/user.png"} alt="" />
+                                <p className="font-medium text-gray-800">{review.user}</p>
                             </div>
-                            <div className='flex flex-col'>
-                            <p className="font-medium text-gray-800">{review.user}</p>
-                            <p className="text-sm text-yellow-500 flex gap-2 items-center">{review.rating} <FaStar className="text-amber-400" size={12}></FaStar></p>
-                            <p className="text-gray-700">{review.comment}</p>
+                            {/* ratings */}
+                            <div className='flex items-center'>
+                            <p className="text-md text-yellow-500 flex gap-2 items-center">{review.rating} <FaStar className="text-amber-400" size={13}></FaStar></p>
                             </div>
-                            
+                            </div>
+                            <div className='border-b border-amber-400 mt-2 mb-2'></div>
+                            {/* comments sections */}
+                            <p className="text-gray-700 ">{review.comment}</p>
                         </div>
                     ))}
                 </div>
