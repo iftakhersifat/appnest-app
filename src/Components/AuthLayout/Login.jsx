@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link } from 'react-router';
+import { AUthContext } from '../Firebase/AuthProvider';
 
 const Login = () => {
+  const {signIn} =use(AUthContext);
+
     const handelLogin=(e)=>{
         e.preventDefault();
         const email =e.target.email.value;
         const password =e.target.password.value;
         console.log(email, password);
+
+        // signIn
+        signIn(email, password)
+        .then(result=>{
+          console.log(result)
+        })
+        .catch(error=>{
+          console.log(error)
+        })
     }
     return (
         <div className="hero mb-10">
