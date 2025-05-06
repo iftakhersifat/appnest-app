@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import { FaEye } from 'react-icons/fa';
+import { IoIosEyeOff } from 'react-icons/io';
 
 const Register = () => {
   useEffect(() => {
@@ -12,6 +14,9 @@ const Register = () => {
   const {createUser, UpdateUser, setUser, googleProvider} =use(AUthContext);
 
   const navigate =useNavigate();
+
+  // password show
+  const [showPassword, setPassword] = useState(false);
 
   // check password
   const checkPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
@@ -69,8 +74,8 @@ const Register = () => {
     return (
         <div className="hero mb-10">
     <div className="hero-content flex-col">
-    <div className="card w-[500px] shadow-2xl">
-      <div className="card-body">
+    <div className="card w-[500px] shadow-lg">
+      <div className="card-body bg-gradient-to-r from-blue-100 via-gray-50 to-gray-200">
 
         <form onSubmit={handelRegister} className="fieldset">
           <label className="label">Name</label>
@@ -83,7 +88,14 @@ const Register = () => {
           <input type="email" className="input w-full" placeholder="Enter your valid Email" name='email' />
 
           <label className="label">Password</label>
-          <input type="password" className="input w-full" placeholder="Enter Correct Password" name='password' />
+          <div className="relative">
+          <input type={showPassword ? "text" : "password"} className="input w-full" placeholder="Enter Correct Password" name='password' />
+          <button onClick={()=>setPassword(!showPassword)} className="absolute right-4 top-2">
+            {
+              showPassword ? <IoIosEyeOff size={20} /> : <FaEye size={20} />
+            }
+          </button>
+          </div>
 
           {
             error && <p className='text-red-500'>{error}</p>
