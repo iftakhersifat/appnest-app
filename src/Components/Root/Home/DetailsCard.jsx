@@ -36,7 +36,7 @@ const DetailsCard = () => {
     const handleInstallToggle = () => {
         if (!isInstalled) {
           setIsInstalled(true);
-          setHasInstalledOnce(true); // Mark that the app was installed at least once
+          setHasInstalledOnce(true);
         } else {
           setIsInstalled(false);
         }

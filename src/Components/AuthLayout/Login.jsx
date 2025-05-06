@@ -1,7 +1,9 @@
-import React, { use, useEffect } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AUthContext } from '../Firebase/AuthProvider';
 import toast from 'react-hot-toast';
+import { IoIosEyeOff } from 'react-icons/io';
+import { FaEye } from 'react-icons/fa';
 
 const Login = () => {
   useEffect(() => {
@@ -9,6 +11,9 @@ const Login = () => {
     }, []);
 
   const {signIn} =use(AUthContext);
+
+  // show password
+  const [showPassword, setPassword] = useState(false);
 
   const navigate =useNavigate();
 
@@ -31,14 +36,23 @@ const Login = () => {
     return (
         <div className="hero mb-10">
     <div className="hero-content flex-col">
-    <div className="card w-[500px] shadow-2xl">
+    <div className="card w-[500px] shadow-2xl bg-gradient-to-r from-blue-100 via-gray-50 to-gray-200">
       <div className="card-body">
 
         <form onSubmit={handelLogin} className="fieldset">
           <label className="label">Email</label>
           <input type="email" className="input w-full" placeholder="Email" name='email' />
+
           <label className="label">Password</label>
-          <input type="password" className="input w-full" placeholder="Password" name='password' />
+          <div className="relative">
+          <input type={showPassword ? "text" : "password"} className="input w-full" placeholder="Enter Correct Password" name='password' />
+          <button onClick={()=>setPassword(!showPassword)} className="absolute right-4 top-2">
+            {
+              showPassword ? <IoIosEyeOff size={20} /> : <FaEye size={20} />
+            }
+          </button>
+          </div>
+
           <div><a className="link link-hover">Forgot password?</a></div>
           <button className="btn btn-neutral mt-4 mb-2">Login</button>
 
