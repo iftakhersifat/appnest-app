@@ -68,9 +68,9 @@ const AuthProvider = ({children}) => {
         setLoading,
     }
 
-    return <AUthContext value={authData}>
+    return <AUthContext.Provider value={authData}>
         {children}
-    </AUthContext>
+    </AUthContext.Provider>
 };
 
 export default AuthProvider;

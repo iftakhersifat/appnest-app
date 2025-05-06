@@ -27,14 +27,13 @@ const router = createBrowserRouter([
     children:[
       {index: true,
        Component: Home},
-      {path: "apps", Component:Apps},
       {path: "about", Component: About},
 
       // profile
       {path: "profile", 
-       element: <Private>
+       element: 
         <Profile></Profile>
-       </Private>
+       
       },
 
       // details card

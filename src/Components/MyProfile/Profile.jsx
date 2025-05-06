@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import { AUthContext } from '../Firebase/AuthProvider';
 import toast from 'react-hot-toast';
-import NotFound from '../NotFound/NotFound';
+import { Link } from 'react-router';
 
 const Profile = () => {
   useEffect(() => {
@@ -12,8 +12,27 @@ const Profile = () => {
   const [name, setName] = useState(user?.displayName || '');
   const [photoURL, setPhotoURL] = useState(user?.photoURL || '');
 
-  if (!user) return <NotFound />;
-
+  if (!user) {
+    return (
+      <div className="min-h-screen flex flex-col justify-center items-center px-4">
+        <div className="bg-gradient-to-r from-blue-100 via-gray-50 to-gray-200 shadow-lg rounded-xl p-8 max-w-md text-center">
+          <img
+            src="/assets/user.png"
+            alt="No User"
+            className="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-blue-300"
+          />
+          <h1 className="text-2xl font-bold text-red-600 mb-2">No User Found</h1>
+          <p className="text-gray-600 mb-6">You need to be logged in to access this page.</p>
+          <Link
+            to="/auth/login"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">Go to Login
+          </Link>
+        </div>
+      </div>
+    );
+  }
+  
+    
   const handleUpdate = (e) => {
     e.preventDefault();
 

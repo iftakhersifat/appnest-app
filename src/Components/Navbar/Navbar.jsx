@@ -16,7 +16,7 @@ const Navbar = () => {
     }
     return (
         <div className='container mx-auto mt-4'>
-            <div className='flex justify-between items-center'>
+            <div className='flex justify-between items-center flex-wrap'>
             {/* image section */}
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -40,11 +40,13 @@ const Navbar = () => {
                   </div>
 
             {/* link section */}
+            <div className='-ml-[650px]'>
             <div className='space-x-6 lg:flex hidden'>
                 <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Home</NavLink>
                 <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
                 <NavLink to="/profile" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>My Profile</NavLink>
                 <NavLink to="/about" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>About Us</NavLink>
+            </div>
             </div>
             {/* button section */}
             <div className='flex gap-4'>
