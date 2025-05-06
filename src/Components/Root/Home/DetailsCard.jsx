@@ -70,7 +70,7 @@ const DetailsCard = () => {
     if (!app) return <div className="text-center text-lg font-semibold">Loading...</div>;
 
     return (
-        <div className="container mx-auto p-8 bg-gradient-to-r from-blue-100 via-gray-50 to-gray-200 shadow-lg rounded-lg mb-28">
+        <div className="container mx-auto p-8 px-4 bg-gradient-to-r from-blue-100 via-gray-50 to-gray-200 shadow-lg rounded-lg mb-28">
             <h1 className="text-3xl font-extrabold text-gray-800 mb-6">App Details</h1>
 
             <div className="mb-8">

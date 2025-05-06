@@ -12,10 +12,6 @@ const Footer = () => {
     <p className="font-bold">
     All the right apps. All in one Nest.
     </p>
-    <div className='space-x-6 mt-1'>
-     <NavLink to="/apps" className={({ isActive }) => isActive ? "text-green-500 underline" : " "}>Apps</NavLink>
-    <NavLink to="/profile" className={({ isActive }) => isActive ? "text-green-500 underline" : " "}>My Profile</NavLink>
-    </div>
 
     <p className='mt-1'>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
@@ -25,9 +21,11 @@ const Footer = () => {
   <div>
   <h6 className="footer-title">Legal</h6>
   <div className='flex flex-col gap-2'>
-  <NavLink to="/terms" className="text-white">Terms of Service</NavLink>
+    <NavLink to="/terms" className="text-white">Terms of Service</NavLink>
     <NavLink to="/privacy" className="text-white">Privacy Policy</NavLink>
     <NavLink to="/resources" className="text-white">Developer Resources</NavLink>
+    <NavLink to="/profile" className={({ isActive }) => isActive ? "text-green-500 underline" : " "}>My Profile</NavLink>
+    <NavLink to="/about" className={({ isActive }) => isActive ? "text-green-500 underline" : ""}>About Us</NavLink>
     </div>
   </div>
 

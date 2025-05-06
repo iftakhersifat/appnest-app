@@ -20,7 +20,7 @@ const Navbar = () => {
             <div>
                 <img className='w-42 -ml-4' src="/assets/logo.png" alt="" />
             </div>
-            <div className='space-x-6'>
+            <div className='space-x-6 md:flex hidden'>
                 <NavLink to="/" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Home</NavLink>
                 <NavLink to="/apps" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>Apps</NavLink>
                 <NavLink to="/profile" className={({ isActive }) => isActive ? "text-blue-500 underline text-[18px]" : "text-[18px]"}>My Profile</NavLink>
