@@ -53,7 +53,7 @@ const Profile = () => {
     <div className="hero mb-10">
       <div className="hero-content flex-col">
         <div className="card w-[500px] shadow-2xl">
-          <div className="card-body">
+          <div className="card-body bg-linear-to-r/increasing from-indigo-500 to-teal-400 rounded-lg">
 
             <div className="text-center mb-6">
               <img className="w-32 h-32 rounded-full border-4 border-blue-500 mx-auto" src={photoURL} alt="Profile" />
