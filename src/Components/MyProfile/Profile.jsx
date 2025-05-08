@@ -57,11 +57,11 @@ const Profile = () => {
 
             <div className="text-center mb-6">
               <img className="w-32 h-32 rounded-full border-4 border-blue-500 mx-auto" src={photoURL} alt="Profile" />
-              <h2 className="text-2xl font-bold mt-2">{name}</h2>
-              <p className="text-sm text-gray-500">{user.email}</p>
+              <h2 className="text-2xl text-white font-bold mt-2">{name}</h2>
+              <p className="text-sm text-white">{user.email}</p>
             </div>
             <form onSubmit={handleUpdate} className='space-y-4'>
-              <label className="label">Edit Name</label>
+              <label className="label text-white">Edit Name</label>
               <input
                 type="text"
                 className="input w-full"
@@ -69,7 +69,7 @@ const Profile = () => {
                 onChange={(e) => setName(e.target.value)}
               />
 
-              <label className="label">Edit Photo URL</label>
+              <label className="label text-white">Edit Photo URL</label>
               <input
                 type="text"
                 className="input w-full"
@@ -77,7 +77,7 @@ const Profile = () => {
                 onChange={(e) => setPhotoURL(e.target.value)}
               />
 
-              <button type="submit" className="btn btn-neutral mt-4 mb-2 w-full">
+              <button type="submit" className="btn bg-gradient-to-b from-blue-400 to-blue-700 text-white mt-4 mb-2 w-full">
                 Save Changes
               </button>
             </form>
