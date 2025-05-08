@@ -1,12 +1,48 @@
-# React + Vite
+# AppNest - User Profile Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and responsive profile management component built with React. This component displays authenticated user information (name, email, and photo), allows updates to the profile, and protects routes from unauthenticated access.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+[https://gleeful-babka-14814f.netlify.app/](https://gleeful-babka-14814f.netlify.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎯 Purpose
+
+This project demonstrates how to build a profile page in React that integrates with Firebase Authentication. It allows users to view and update their profile details in a secure and user-friendly interface.
+
+---
+
+## ✨ Key Features
+
+- Displays authenticated user's name, email, and profile photo
+- Allows editing of name and photo URL
+- Updates Firebase user profile using Firebase SDK
+- Shows toast notifications on success or failure
+- Protects the profile route from unauthenticated users
+- Fully responsive UI styled with Tailwind CSS
+
+---
+
+## 🔧 Tech Stack & Tools
+
+- **React**
+- **Firebase Authentication**
+- **React Router** (`react-router`)
+- **Tailwind CSS**
+- **React Hot Toast**
+- **Swiper**
+
+---
+
+## 📦 NPM Packages Used
+
+```bash
+npm install react-router
+npm install firebase
+npm install react-hot-toast
+npm install swiper
+npm install tailwindcss @tailwindcss/vite
