@@ -52,7 +52,7 @@ const Profile = () => {
   return (
     <div className="hero mb-10">
       <div className="hero-content flex-col">
-        <div className="card w-[500px] shadow-2xl">
+        <div className="card md:w-[500px] w-[350px] shadow-2xl">
           <div className="card-body bg-linear-to-r/increasing from-indigo-500 to-teal-400 rounded-lg">
 
             <div className="text-center mb-6">
