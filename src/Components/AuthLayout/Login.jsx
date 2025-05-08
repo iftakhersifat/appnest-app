@@ -46,7 +46,7 @@ const Login = () => {
           <label className="label">Password</label>
           <div className="relative">
           <input type={showPassword ? "text" : "password"} className="input w-full" placeholder="Enter Correct Password" name='password' />
-          <button onClick={()=>setPassword(!showPassword)} className="absolute right-4 top-2">
+          <button type='button' onClick={()=>setPassword(!showPassword)} className="absolute right-4 top-2">
             {
               showPassword ? <IoIosEyeOff size={20} /> : <FaEye size={20} />
             }
@@ -54,7 +54,7 @@ const Login = () => {
           </div>
 
           <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral mt-4 mb-2">Login</button>
+          <button className="btn bg-gradient-to-b from-blue-400 to-blue-700 text-white mt-4 mb-2">Login</button>
 
           {/* Google */}
           <button className="btn bg-white text-black border-1 border-[#e5e5e5]">
